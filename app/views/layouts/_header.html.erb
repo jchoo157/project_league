@@ -1,9 +1,10 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="header">
+  <div class="container">
     <% link_to "Project League", root_path, id:"logo" %>
 
     <nav>
-      <ul class="navbar navbar-default navbar-fixed-top">
+      <ul class="nav nav-pills">
+        <li><%= link_to "Home", home_path %></li>
         <li><%= link_to "Stats", stats_path %></li>
         <li><%= link_to "Help", help_path %></li>
         <li><%= link_to "About", about_path %></li>
