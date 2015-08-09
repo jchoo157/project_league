@@ -8,7 +8,19 @@
 
 body {
   padding-top: 60px;
+  background-image: url("blitz.png");
 }
+
+h1 {
+  color: white;
+  background-color: black;
+}
+
+h2 {
+  color: white;
+  background-color: black;
+}
+
 
 .center {
   text-align: center;
@@ -17,6 +29,12 @@ body {
 .center h1{
   margin-bottom: 10px;
 }
+
+
+.table td {
+  width:0%;
+}
+
 
 
 

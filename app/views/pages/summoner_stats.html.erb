@@ -1,0 +1,46 @@
+<%= provide(:title, 'Summoner Stats') %>
+<h1>Summoner <%= @name %></h1>
+<div style="color: white;">Summoner ID: <%= @masteries[@id.to_s]['summonerId'] %>
+
+</div>
+<%= image_tag 'http://ddragon.leagueoflegends.com/cdn/5.12.1/img/profileicon/539.png' %>
+
+<div class="container">
+  <h2>Match History</h2>
+  <table class="table table-striped">
+    <tbody>
+    <tr>
+      <td><%= image_tag "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/#{@champ_image}" %><%=@game_stats['champLevel']%> <%= @name %></td>
+      <td><%= @match_info[0]['queueType'] %></td>
+      <td>
+        <div id="inventory">
+          <div>
+          <img src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/1001.png ">
+          <img src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/1001.png ">
+          <img src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/1001.png ">
+          <img src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/1001.png ">
+          <img src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/1001.png ">
+          <img src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/1001.png ">
+        </div>
+      </td>
+      <td><%= @game_stats['kills'] %>/<%= @game_stats['deaths'] %>/<%= @game_stats['assists'] %></td>
+      <td>
+        <div>
+            Gold: <%= @game_stats['goldEarned'] %>
+        </div>
+        <div>
+            Minion Kills: <%= @game_stats['minionsKilled'] %>
+        </div>
+      </td>
+      <td>
+        Game Length: <%= @match_info[0]['matchDuration'] %>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+

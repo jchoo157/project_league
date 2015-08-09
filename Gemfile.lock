@@ -162,8 +162,11 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   coffee-rails (~> 4.1.0)
+  http-cookie
   jbuilder (~> 2.0)
   jquery-rails
+  mime-types
+  netrc
   rails (= 4.2.3)
   rest-client
   sass-rails (~> 5.0)

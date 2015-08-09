@@ -1,0 +1,10 @@
+<div class="center">
+<% provide(:title, 'Home') %>
+<h1 class="elise_bg">Welcome to Project League!</h1>
+<%= form_for :summoner, url: '/summoner_stats', method: 'get' do |m| %>
+      <%= m.text_field :name, placeholder:'Enter summoner name noob' %>
+      <%= m.submit 'Submit' %>
+      <% end %>
+  <!--  link_to image_tag('leaguelogo.png', alt:'lologo'), 'https://leagueoflegends.com' %> -->
+  </div>
+</div>

@@ -12,6 +12,9 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'rest-client'
 gem 'bootstrap-sass'
+gem 'mime-types'
+gem 'netrc'
+gem 'http-cookie'
 
 
 # Use jquery as the JavaScript library
