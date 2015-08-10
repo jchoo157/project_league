@@ -10,30 +10,25 @@
   <table class="table table-striped">
     <tbody>
     <tr>
-      <td><%= image_tag "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/#{@champ_image}" %><%=@game_stats['champLevel']%> <%= @name %></td>
-      <td><%= @match_info[0]['queueType'] %></td>
+      <td><%= image_tag "http://ddragon.leagueoflegends.com/cdn/5.2.1/img/champion/#{champ_icon}.png " %> <%= @level %> <%= @name %></td>
+      <td> $$$Game mode goes here </td>
       <td>
         <div id="inventory">
           <div>
           <img src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/1001.png ">
-          <img src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/1001.png ">
-          <img src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/1001.png ">
-          <img src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/1001.png ">
-          <img src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/1001.png ">
-          <img src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/1001.png ">
         </div>
       </td>
-      <td><%= @game_stats['kills'] %>/<%= @game_stats['deaths'] %>/<%= @game_stats['assists'] %></td>
+      <td>  $$$KDA goes here</td>
       <td>
         <div>
-            Gold: <%= @game_stats['goldEarned'] %>
+            Gold:
         </div>
         <div>
-            Minion Kills: <%= @game_stats['minionsKilled'] %>
+            Minion Kills:
         </div>
       </td>
       <td>
-        Game Length: <%= @match_info[0]['matchDuration'] %>
+        Game Length:
       </td>
     </tr>
     </tbody>
