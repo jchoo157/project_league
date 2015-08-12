@@ -31,14 +31,14 @@
       <td class="border"><%= @game_stats['championsKilled'] %>/<%= @game_stats['numDeaths'] %>/<%= @game_stats['assists'] %></td>
       <td class="border">
         <div>
-            Gold:
+            Gold: <%= @game_stats['goldEarned'] %>
         </div>
         <div>
-            Minion Kills:
+            Minion Kills: <%= @game_stats['minionsKilled'] + @game_stats['neutralMinionsKilled'] %>
         </div>
       </td>
       <td class = 'border'>
-        Game Length:
+        Game Length: <%= @game_stats['timePlayed'] %>
       </td>
 
     </tr>
