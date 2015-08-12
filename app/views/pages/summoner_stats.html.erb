@@ -1,25 +1,36 @@
 <%= provide(:title, 'Summoner Stats') %>
 <h1>Summoner <%= @name %></h1>
-<div style="color: white;">Summoner ID: <%= @masteries[@id.to_s]['summonerId'] %>
-
+<div style="color: white;">Summoner ID: <%= @masteries_id %>
 </div>
 <%= image_tag 'http://ddragon.leagueoflegends.com/cdn/5.12.1/img/profileicon/539.png' %>
-
+<%= if game_stats[item0] == nil
+      puts 
 <div class="container">
   <h2>Match History</h2>
-  <table class="table table-striped">
-    <tbody>
+  <table class='border'>
+    <tbody class='border'>
     <tr>
-      <td><%= image_tag "http://ddragon.leagueoflegends.com/cdn/5.2.1/img/champion/#{champ_icon}.png " %> <%= @level %> <%= @name %></td>
-      <td> $$$Game mode goes here </td>
-      <td>
+
+      <td class="border">
+        <h3><%= "#{@champ_image_icon}" %></h3>
+        <%= image_tag "http://ddragon.leagueoflegends.com/cdn/5.2.1/img/champion/#{@champ_image_icon}.png " %>
+        <h3>Level: <%= @level %><br /><%= @name %></h3>
+      </td>
+      <td class='border'> <%= @game_type %> </td>
+      <td class='border'>
         <div id="inventory">
           <div>
-          <img src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/1001.png ">
+            <img src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/<%=@game_stats['item0']%>.png ">
+            <img src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/<%=@game_stats['item1']%>.png ">
+            <img src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/<%=@game_stats['item2']%>.png ">
+            <img src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/<%=@game_stats['item3']%>.png ">
+            <img src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/<%=@game_stats['item4']%>.png ">
+            <img src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/<%=@game_stats['item5']%>.png ">
+            <img src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/<%=@game_stats['item6']%>.png ">
         </div>
       </td>
-      <td>  $$$KDA goes here</td>
-      <td>
+      <td class="border"><%= @game_stats['championsKilled'] %>/<%= @game_stats['numDeaths'] %>/<%= @game_stats['assists'] %></td>
+      <td class="border">
         <div>
             Gold:
         </div>
@@ -27,12 +38,14 @@
             Minion Kills:
         </div>
       </td>
-      <td>
+      <td class = 'border'>
         Game Length:
       </td>
+
     </tr>
     </tbody>
   </table>
+ </div>
 </div>
 
 

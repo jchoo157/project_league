@@ -30,10 +30,20 @@ h2 {
   margin-bottom: 10px;
 }
 
-
-.table td {
-  width:0%;
+table {
+  background-color: white;
+  table-layout: fixed;
 }
+
+
+.border {
+  border-style: solid;
+  border-color: black;
+  width: 100%;
+  height: 100%;
+}
+
+
 
 
 
