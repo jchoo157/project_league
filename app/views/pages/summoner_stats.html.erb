@@ -34,7 +34,7 @@
             Gold: <%= @game_stats['goldEarned'] %>
         </div>
         <div>
-            Minion Kills: <%= @game_stats['minionsKilled'] + @game_stats['neutralMinionsKilled'] %>
+            Minion Kills: <%= @game_stats['minionsKilled'].to_i + @game_stats['neutralMinionsKilled'].to_i %>
         </div>
       </td>
       <td class = 'border'>
