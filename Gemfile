@@ -15,6 +15,7 @@ gem 'bootstrap-sass'
 gem 'mime-types'
 gem 'netrc'
 gem 'http-cookie'
+gem 'haml'
 
 
 # Use jquery as the JavaScript library

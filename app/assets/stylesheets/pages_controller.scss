@@ -34,6 +34,15 @@ table {
   table-layout: fixed;
 }
 
+td {
+  height: 50px;
+  width: 50px;
+}
+
+.border td {
+  text-align:center;
+  vertical-align:middle;
+}
 
 .border {
   border-style: solid;
