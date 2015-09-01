@@ -3,7 +3,7 @@ class LeagueApi
 
   def initialize
     base_url = 'https://na.api.pvp.net/api/lol/'
-    api_file = YAML.load_file('/Users/user/Projects/project_league/config/api.yml')
+    api_file = YAML.load_file('/Users/dquach/Projects/project_league/config/api.yml')
     @api_key = api_file['api_key']
     @client = RestClient::Resource.new base_url
   end

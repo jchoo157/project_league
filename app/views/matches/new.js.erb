@@ -1,0 +1,8 @@
+$form = $('#user-form');
+
+$('#match-button').hide();
+$form.html("<%= j (render 'form') %>");
+$form.show('slide', {
+    duration: 1300,
+    easing: 'easeOutBounce'
+});

@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
-  root 'pages#home'
-  get 'home' => 'pages#home'
-  get 'help' => 'pages#help'
-  get 'about' => 'pages#about'
-  get 'summoner_stats' => 'pages#summoner_stats'
+  root 'static_pages#home'
+  get 'home' => 'static_pages#home'
+  get 'help' => 'static_pages#help'
+  get 'about' => 'static_pages#about'
+
+  resource :match
 
 end

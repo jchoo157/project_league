@@ -1,56 +1,30 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
-
-#logo {
-  float: left;
-  margin-right: 10px;
-}
-
 body {
   padding-top: 60px;
   background-image: url("blitz.png");
 }
 
-h1 {
-  color: white;
-  background-color: black;
-}
-
-h2 {
-  color: white;
-  background-color: black;
-}
-
-.center {
-  text-align: center;
-}
-
-.center h1{
-  margin-bottom: 10px;
-}
-
-table {
-  background-color: white;
-  table-layout: fixed;
-}
-
-td {
-  height: 50px;
-  width: 50px;
-}
-
-.border td {
-  text-align:center;
-  vertical-align:middle;
-}
-
-.border {
-  border-style: solid;
-  border-color: black;
-  border-radius: 25px;
-  width: 100%;
-  height: 100%;
-}
+//table {
+//  background-color: white;
+//  table-layout: fixed;
+//}
+//
+//td {
+//  height: 50px;
+//  width: 50px;
+//}
+//
+//.border td {
+//  text-align: center;
+//  vertical-align: middle;
+//}
+//
+//.border {
+//  border-style: solid;
+//  border-color: black;
+//  border-radius: 25px;
+//  width: 100%;
+//  height: 100%;
+//}
 
 
 

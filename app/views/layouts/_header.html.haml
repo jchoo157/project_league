@@ -1,13 +1,11 @@
-%header.navbar.navbar-fixed-top.navbar-inverse
+%nav.navbar.navbar-inverse.navbar-fixed-top
   .container
-    = link_to 'Project League', root_path, id: 'logo'
-    %nav
-      %ul.nav.nav-pills
-        %li
-          = link_to 'Home', home_path
-        %li
-          = link_to 'Help', help_path
-        %li
-          = link_to 'About', about_path
+    = link_to 'Project League', root_path, class: 'navbar-brand'
 
-
+    %ul.nav.navbar-nav.navbar-right
+      %li
+        = link_to 'Home', home_path
+      %li
+        = link_to 'About', about_path
+      %li
+        = link_to 'Help', help_path

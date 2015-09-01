@@ -1,9 +1,0 @@
-.center
-= provide(:title, 'Home')
-%h1 Welcome to Project League!
-.col-md-offset-4.col-md-4
-  = form_for :summoner, url: '/summoner_stats', method: 'get' do |m|
-    .form-group
-      = m.text_field :name, placeholder:'Enter summoner name noob', class: 'form-control'
-    .form-group
-      = m.submit 'Submit', class: 'btn btn-primary from-control'
