@@ -5,6 +5,13 @@ class MatchesController < ApplicationController
   end
 
   def show
+    user_params[:name]
     raise
+  end
+
+  private
+
+  def user_params
+    params.require(:summoner).permit(:name)
   end
 end
