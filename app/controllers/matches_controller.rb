@@ -5,8 +5,7 @@ class MatchesController < ApplicationController
   end
 
   def show
-    user_params[:name]
-    raise
+    @user = User.new(username: user_params[:name])
   end
 
   private

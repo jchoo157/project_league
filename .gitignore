@@ -16,6 +16,6 @@
 !/log/.keep
 /tmp
 
-/config/api.yml
+/config/initializers/api.yml
 
 .idea/

@@ -1,34 +1,26 @@
 class User
-  attr_reader :api, :name, :id, :match_history, :champion_id, :game_stats, :champ_name
+  attr_reader :username, :id, :match_history
 
-  def initialize(username)
-    @api = LeagueApi.new
-    @name = username
-    response_summoner_info = api.get_summoner_info(name)
-    @id = response_summoner_info[name]['id']
-    response_match_history = api.get_match_history(id)
-    @champion_id = response_match_history['games'][0]['championId']
-    @game_stats = response_match_history['games'][0]['stats']
-    response_champ_dir = api.get_champ_dir(champion_id)
-    @champ_name = response_champ_dir['key']
-
+  def initialize(username:)
+    @username = username
+    @id = get_id(api: SummonerApi.new)
+    @match_history = get_match_history(api: MatchHistoryApi.new)
   end
 
-  def summoner_info
-    @summoner_info ||= api.get_summoner_info name
+  private
+
+  def get_match_history(api:)
+    data = parse api.get_match_history(for_id: id)
+    @match_history = data[:matches]
   end
 
-  def match_history
-    @match_history ||= api.get_match_history id
+  def get_id(api:)
+    info = parse api.get_summoner_info(by_name: username)
+    info[username.to_sym][:id]
   end
 
-  def masteries
-    @masteries ||= api.get_masteries id
+  def parse(data)
+    JSON.parse(data, symbolize_names: true)
   end
-
-  def champ_dir
-    @champ_dir ||= api.get_champ_dir champion_id
-  end
-
 
 end
