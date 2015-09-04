@@ -1,5 +1,5 @@
 class User
-  attr_reader :username, :id, :match_history
+  attr_reader :username, :id, :match_history, :champion
 
   def initialize(username:)
     @username = username

@@ -1,3 +1,9 @@
 %h1 Welcome to the Match Show page!
-
-= @user.match_history.map { |match| match[:matchMode] }
+.container
+  -@user.match_history.map do |match|
+    -@game_time = match[:matchDuration]
+    -@game_type = match[:matchType]
+    -match[:participants].each do |peeps|
+      -@champ_id = peeps[:championId]
+      -@stats = peeps[:stats]
+      =render 'matches/match_history'
