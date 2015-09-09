@@ -5,17 +5,15 @@ class MatchesController < ApplicationController
   end
 
   def show
-    @user = User.new(username: user_params[:name])
-=begin
    @user = User.new(username: user_params[:name])
       @user.match_history.map do |match|
       @game_type = match[:matchType]
+      @game_time = match[:matchDuration]
       match[:participants].each do |peeps|
         @champ_id = peeps[:championId]
         @stats = peeps[:stats]
-        @game_time = match[:matchDuration]
-=end
-
+      end
+    end
   end
 
   private
