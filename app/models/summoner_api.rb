@@ -5,7 +5,7 @@ class SummonerApi < BaseApi
   end
 
   def default_url
-    'v1.4/summoner/by-name/'
+    'api/lol/na/v1.4/summoner/by-name/'
   end
 
 end

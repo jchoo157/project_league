@@ -5,6 +5,7 @@
       %td.border
         - match_history[:participants].each do |participant|
           %h3 Level: #{ participant[:stats][:champLevel] }
+          =image_tag "http://ddragon.leagueoflegends.com/cdn/5.2.1/img/champion/#{get_champion_name(id: participant[:championId])}.png "
           %td.border #{ match_history[:matchType] }
           %td.border.image
             =image_tag "http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/#{participant[:stats][:item0]}.png"

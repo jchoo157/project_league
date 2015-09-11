@@ -5,7 +5,8 @@ class MatchesController < ApplicationController
   end
 
   def show
-   @user = User.new(username: user_params[:name])
+    @user = User.new(username: user_params[:name])
+
   end
 
   private

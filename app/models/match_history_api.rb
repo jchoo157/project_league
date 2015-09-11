@@ -5,6 +5,6 @@ class MatchHistoryApi < BaseApi
   end
 
   def default_url
-    'v2.2/matchhistory/'
+    'api/lol/na/v2.2/matchhistory/'
   end
 end
