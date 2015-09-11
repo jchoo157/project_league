@@ -1,5 +1,5 @@
 class BaseApi
-  attr_reader :base_url, :base_static_url, :client, :static_client
+  attr_reader :base_url, :client
 
   def initialize
     @base_url = 'https://na.api.pvp.net/' + default_url
