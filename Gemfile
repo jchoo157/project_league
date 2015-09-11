@@ -16,6 +16,8 @@ gem 'mime-types'
 gem 'netrc'
 gem 'http-cookie'
 gem 'haml'
+gem 'rspec-rails'
+gem 'webmock'
 
 
 # Use jquery as the JavaScript library

@@ -1,3 +1,5 @@
-%h1 Welcome to the Match Show page!
+%h1.style Welcome to the Match Show page!
+.container
 
-= @user.match_history.map { |match| match[:matchMode] }
+  = render partial: 'match_history', collection: @user.match_history
+
