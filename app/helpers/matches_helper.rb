@@ -7,5 +7,4 @@ module MatchesHelper
   def get_champion_name(id:)
     list_of_champions[:data].select { |_, info| info[:id] == id }.first.first.to_s
   end
-
 end
