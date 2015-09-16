@@ -16,6 +16,7 @@ gem 'mime-types'
 gem 'netrc'
 gem 'http-cookie'
 gem 'haml'
+gem 'devise'
 
 
 # Use jquery as the JavaScript library
