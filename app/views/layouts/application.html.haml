@@ -17,7 +17,11 @@
   .container
     = render 'layouts/header'
   .center
-    = yield
+    %p.notice
+      -notice
+    %p.alert
+      -alert
+      = yield
   .container
     = render 'layouts/footer'
 
