@@ -18,11 +18,13 @@ module MatchesHelper
     'http://ddragon.leagueoflegends.com/cdn/5.2.1/img/champion/'
   end
 
-  def player_stats
-  player_stats = participant[:stats]
-    player_stats
+  def summoner_icon_url
+    'http://ddragon.leagueoflegends.com/cdn/5.18.1/img/spell/'
   end
 
+  def game_type
+
+  end
 end
 
 
