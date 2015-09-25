@@ -1,5 +1,6 @@
 module MatchesHelper
-attr_reader :level
+
+  attr_reader :level
 
   def list_of_champions
     @list ||= JSON.parse(ChampionApi.new.get_list_of_champions, symbolize_names: true)
@@ -16,4 +17,13 @@ attr_reader :level
   def champ_icon_url
     'http://ddragon.leagueoflegends.com/cdn/5.2.1/img/champion/'
   end
+
+  def player_stats
+  player_stats = participant[:stats]
+    player_stats
+  end
+
 end
+
+
+
