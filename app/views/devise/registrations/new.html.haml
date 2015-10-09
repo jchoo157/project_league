@@ -1,32 +1,35 @@
-.testing
-  %h1.colorh1 Sign up
+.col-md-6.col-md-offset-3
+  .row
+    .panel.panel-default
+      .panel-heading
+        %h1.colorh1 Sign up
+      .panel-body
+        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+          = devise_error_messages!
 
-  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-    = devise_error_messages! 
+          .field
+            %br
+            = f.label :email
+            %br
+            = f.email_field :email, placeholder: 'Enter email address', autofocus: true
 
-    .field
-      %br
-      = f.label :email
-      %br
-      = f.email_field :email, placeholder: 'Enter email address', autofocus: true
+          .field
+            %br
+            = f.label :password
+            - if @minimum_password_length
+              %em
+                = "(#{@minimum_password_length} characters minimum)"
+            %br
+            = f.password_field :password, placeholder: 'Enter your password', autocomplete: "off"
 
-    .field
-      %br
-      = f.label :password
-      - if @minimum_password_length
-        %em
-          = "#{@minimum_password_length} characters minimum"
-      %br
-      = f.password_field :password, placeholder: 'Enter your password', autocomplete: "off"
+          .field
+            %br
+            = f.label :password_confirmation
+            %br
+            = f.password_field :password_confirmation, placeholder: 'Enter password again', autocomplete: "off"
 
-    .field
-      %br
-      = f.label :password_confirmation
-      %br
-      = f.password_field :password_confirmation, placeholder: 'ENTER AGAIN LOL', autocomplete: "off"
+          .actions
+            %br
+            = f.submit 'Sign up', :class => 'btn btn-default'
 
-    .actions
-      %br
-      = f.submit 'Sign up', :class => 'btn btn-default'
-
-  = render 'devise/shared/links'
+        = render 'devise/shared/links'

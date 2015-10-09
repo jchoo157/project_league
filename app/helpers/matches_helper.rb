@@ -11,7 +11,7 @@ module MatchesHelper
   end
 
   def item_img_url
-    'http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/'
+    'http://www.probuilds.net/resources/img/items/28/'
   end
 
   def champ_icon_url
@@ -19,12 +19,9 @@ module MatchesHelper
   end
 
   def summoner_icon_url
-    'http://ddragon.leagueoflegends.com/cdn/5.18.1/img/spell/'
+    'http://ddragon.leagueoflegends.com/cdn/5.2.1/img/spell/'
   end
 
-  def game_type
-
-  end
 end
 
 
