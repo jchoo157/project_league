@@ -1,26 +1,34 @@
-%div Summoner ID: #{ @user.id }
-%br
-  .panel.panel-default
+/%div Summoner ID: #{ @user.id }
+%hr
+  %div
+    %table
+      %td
+        %div
+          %h3= game_type(match_history[:matchType])
+      %td
+        %div Game Length
+        %div= time(match_history[:matchDuration])
     %body
       - match_history[:participants].each do |participant|
         %table{:style=>'background-color: white'}
           %tbody
             %tr
-              .panel.panel-default
+              %hr
                 %td.champion_icon
-                  %h5 #{get_champion_name(id: participant[:championId])}
+                  /%h5 #{get_champion_name(id: participant[:championId])}
                   =image_tag champ_icon_url + "#{get_champion_name(id: participant[:championId])}.png", size: '50x50'
-                  %h6 Level: #{ participant[:stats][:champLevel] }
-                %td=  match_history[:matchType]
+                  /%h6 Level: #{ participant[:stats][:champLevel] }
                 %td.items
                   - participant[:stats].select{ |k, _| /^item/ === k }.each do |_, item_id|
                     - if (item_img_url + "#{item_id}.png") == (item_img_url + "0.png")
                       =image_tag 'http://www.probuilds.net/resources/img/items/28/EmptyIcon.png', size: '30x30'
                     - else
                       =image_tag (item_img_url + "#{item_id}.png"), size: '30x30'
-                %td #{participant[:stats][:kills]} / #{participant[:stats][:deaths]} / #{participant[:stats][:assists] }
                 %td
-                  %div Gold: #{ participant[:stats][:goldEarned] }
+                  %div #{participant[:stats][:kills]} Kills
+                  %div #{participant[:stats][:deaths]} Deaths
+                  %div #{participant[:stats][:assists]} Assists
+                %td
+                  %div
+                    %h5 Gold: #{ gold(participant[:stats][:goldEarned]) }
                   %div Minion Kills: #{ participant[:stats][:minionsKilled] + participant[:stats][:neutralMinionsKilled] }
-                %td
-                  Game Length: #{match_history[:matchDuration]}

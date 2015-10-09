@@ -11,7 +11,7 @@
             %br
             = f.label :email
             %br
-            = f.email_field :email, placeholder: 'Enter email address', autofocus: true
+            = f.email_field :email, autofocus: true
 
           .field
             %br
@@ -20,13 +20,13 @@
               %em
                 = "(#{@minimum_password_length} characters minimum)"
             %br
-            = f.password_field :password, placeholder: 'Enter your password', autocomplete: "off"
+            = f.password_field :password, autocomplete: "off"
 
           .field
             %br
             = f.label :password_confirmation
             %br
-            = f.password_field :password_confirmation, placeholder: 'Enter password again', autocomplete: "off"
+            = f.password_field :password_confirmation, autocomplete: "off"
 
           .actions
             %br
