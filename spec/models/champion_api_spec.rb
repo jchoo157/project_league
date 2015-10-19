@@ -14,4 +14,10 @@ describe ChampionApi do
       expect(stub).to have_been_requested
     end
   end
+
+  describe '#default_url' do
+    it 'should be a string' do
+      expect(@champion_api.default_url).to eq('api/lol/static-data/na/v1.2/champion/')
+    end
+  end
 end

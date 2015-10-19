@@ -11,15 +11,15 @@ module MatchesHelper
   end
 
   def item_img_url
-    'http://www.probuilds.net/resources/img/items/28/'
+    'http://ddragon.leagueoflegends.com/cdn/5.20.1/img/item/'
   end
 
   def champ_icon_url
-    'http://ddragon.leagueoflegends.com/cdn/5.2.1/img/champion/'
+    'http://ddragon.leagueoflegends.com/cdn/5.20.1/img/champion/'
   end
 
   def summoner_icon_url
-    'http://ddragon.leagueoflegends.com/cdn/5.2.1/img/spell/'
+    'http://ddragon.leagueoflegends.com/cdn/5.20.1/img/spell/'
   end
 
   def time(seconds)
@@ -53,17 +53,14 @@ module MatchesHelper
   def game_type(game_mode)
     if game_mode == 'MATCHED_GAME'
       'Ranked 5v5'
+    else
+      game_mode
     end
   end
 
-  def teams(team)
-    t1 = []
-    t2 = []
-      while team <= 5
-        t1 += team
-      while team > 5
-        t2 += team
-      end
+  def team_id(id)
+    if id == 100
+    else
     end
   end
 

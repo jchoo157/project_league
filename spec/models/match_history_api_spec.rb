@@ -14,4 +14,10 @@ describe MatchHistoryApi do
       expect(stub).to have_been_requested
     end
   end
+
+  describe '#default_url' do
+    it 'should be a string' do
+      expect(@match_history_api.default_url).to eq('api/lol/na/v2.2/match/')
+    end
+  end
 end

@@ -14,4 +14,10 @@ describe SummonerApi do
       expect(stub).to have_been_requested
     end
   end
+
+  describe '#default_url' do
+    it 'should be a string' do
+      expect(@summoner_api.default_url).to eq('api/lol/na/v1.4/summoner/by-name/')
+    end
+  end
 end

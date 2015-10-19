@@ -6,5 +6,6 @@
       Website is still under construction, but you're
       more than welcome to check out or latest page.
 
-    = link_to 'Click Here', new_match_path, class: 'btn btn-primary', id: 'match-button', remote: true
+    = render 'matches/form'
+    -#= link_to 'Click Here', new_match_path, class: 'btn btn-primary', id: 'match-button', remote: true
     #user-form{ style: 'display:none;' }

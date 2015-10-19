@@ -17,14 +17,18 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'page-object'
+gem 'rspec-expectations'
 
 group :test do
   gem 'webmock'
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
 end
 
 group :development, :test do
   gem 'byebug'
-  gem 'rspec-rails', '~> 3.0'
+  gem 'rspec-rails'
   gem 'web-console', '~> 2.0'
 
   gem 'spring'
