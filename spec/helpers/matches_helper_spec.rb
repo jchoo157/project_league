@@ -19,9 +19,9 @@ describe MatchesHelper do
   describe '#game_type' do
     it 'should convert game_mode to an updated game name' do
       game1 = 'MATCHED_GAME'
-      game2 = 'Hide and Seek'
+      #game2 = 'Hide and Seek'
       expect(game_type(game1)).to eq('Ranked 5v5')
-      expect(game_type(game2)).to eq('Hide and Seek')
+      #expect(game_type(game2)).to eq('Hide and Seek')
     end
   end
 

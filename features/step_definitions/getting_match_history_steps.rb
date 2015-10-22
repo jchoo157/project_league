@@ -1,6 +1,5 @@
 When /^I type in a summoner name$/ do
-  @home_page.username
-  @home_page.summoner('mrapplebeans')
+  @home_page.search_for_summoner('mrapplebeans')
   @match_history_page = MatchHistoryPage.new(@browser)
 end
 

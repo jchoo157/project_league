@@ -7,9 +7,7 @@ When /^I only fill in the (\w+) field$/ do |field|
 end
 
 When /^I enter my email and password$/ do
-  @login_page.email = 'what@what.what'
-  @login_page.password = 'whatwhat'
-  @login_page.login
+  @login_page.login_with('what@what.what', 'whatwhat')
 end
 
 Then /^I should be signed in$/ do

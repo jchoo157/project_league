@@ -1,4 +1,4 @@
-class LoginPage < HomePage
+class LoginPage < EveryPage
   include PageObject
 
   URL = 'http://localhost:3000/accounts/sign_in'
@@ -7,7 +7,6 @@ class LoginPage < HomePage
   text_field(:password, id: 'account_password')
 
   link(:sign_out, href: '/accounts/sign_out')
-
 
   button(:login, type: 'submit')
 
@@ -18,5 +17,6 @@ class LoginPage < HomePage
   def login_with(email, password)
     self.email = email
     self.password = password
+    login
   end
 end
