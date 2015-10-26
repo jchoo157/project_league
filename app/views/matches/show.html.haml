@@ -1,6 +1,7 @@
 = provide(:title, 'Match History page')
-%h1= 'Match History for ' + @user.username.capitalize
-.center
-  = render partial: 'match_history', collection: @user.match_history
+%div#title
+  %h1= 'Match History for ' + @user.username.capitalize
+  .center
+    = render partial: 'match_history', collection: @user.match_history
 
 

@@ -4,7 +4,7 @@
   %div
     %table.center
       %td
-        %h3= game_type(match_history[:matchType])
+        %h4= game_type(match_history[:matchType])
       %td
         %div
           %b Game Length
@@ -26,13 +26,13 @@
                     - else
                       =image_tag (item_img_url + "#{item_id}.png"), size: '30x30'
                 %td
-                  %div #{participant[:stats][:kills]} Kills
-                  %div #{participant[:stats][:deaths]} Deaths
-                  %div #{participant[:stats][:assists]} Assists
+                  %div#kills #{participant[:stats][:kills]} Kills
+                  %div#deaths #{participant[:stats][:deaths]} Deaths
+                  %div#assists #{participant[:stats][:assists]} Assists
                 %td
-                  %div
+                  %div#gold
                     %h5 Gold: #{ gold(participant[:stats][:goldEarned]) }
-                  %div Minion Kills: #{ participant[:stats][:minionsKilled] + participant[:stats][:neutralMinionsKilled] }
+                  %div#minion_kills Minion Kills: #{ participant[:stats][:minionsKilled] + participant[:stats][:neutralMinionsKilled] }
                   %br
         - else
           %table#team2.team_border.center
@@ -49,11 +49,11 @@
                     - else
                       =image_tag (item_img_url + "#{item_id}.png"), size: '30x30'
                 %td
-                  %div #{participant[:stats][:kills]} Kills
-                  %div #{participant[:stats][:deaths]} Deaths
-                  %div #{participant[:stats][:assists]} Assists
+                  %div#kills #{participant[:stats][:kills]} Kills
+                  %div#deaths #{participant[:stats][:deaths]} Deaths
+                  %div#assists #{participant[:stats][:assists]} Assists
                 %td
-                  %div
+                  %div#gold
                     %h5 Gold: #{ gold(participant[:stats][:goldEarned]) }
-                  %div Minion Kills: #{ participant[:stats][:minionsKilled] + participant[:stats][:neutralMinionsKilled] }
+                  %div#minion_kills Minion Kills: #{ participant[:stats][:minionsKilled] + participant[:stats][:neutralMinionsKilled] }
                   %br

@@ -52,7 +52,7 @@ module MatchesHelper
 
   def game_type(game_mode)
     if game_mode == 'MATCHED_GAME'
-      'Ranked 5v5'
+      'Ranked Game'
     else
       game_mode
     end

@@ -12,5 +12,5 @@ Feature: Logging in
     Then I should not be able to log in
 
   Scenario: User types in correct email and password and should be logged in
-    When I enter my email and password
+    When I log in as 'what@what.what'
     Then I should be signed in

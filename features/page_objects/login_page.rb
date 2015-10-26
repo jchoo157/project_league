@@ -1,5 +1,4 @@
-class LoginPage < EveryPage
-  include PageObject
+class LoginPage < AccountInfoPage
 
   URL = 'http://localhost:3000/accounts/sign_in'
 

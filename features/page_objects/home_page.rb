@@ -1,4 +1,4 @@
-class HomePage < EveryPage
+class HomePage
   include PageObject
 
   URL = 'http://localhost:3000/'

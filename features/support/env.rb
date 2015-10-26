@@ -7,6 +7,9 @@
 require 'cucumber/rails'
 require 'watir-webdriver'
 require 'page-object'
+require 'rspec-rails'
+require 'database_cleaner'
+require 'database_cleaner/cucumber'
 
 Kernel.puts 'Starting browser...'
 browser = Watir::Browser.new :firefox

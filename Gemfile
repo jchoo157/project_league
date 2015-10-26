@@ -21,7 +21,7 @@ gem 'page-object'
 gem 'rspec-expectations'
 
 group :test do
-  gem 'webmock'
+  #gem 'webmock'
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
 end
