@@ -1,24 +1,59 @@
-%div{:style=>"color: white"} Summoner ID: #{ @user.id }
-%body.border
-  %table{:style=>'background-color: white'}
-    %tr.border
-      %td.border
-        - match_history[:participants].each do |participant|
-          %h3 Level: #{ participant[:stats][:champLevel] }
-          =image_tag "http://ddragon.leagueoflegends.com/cdn/5.2.1/img/champion/#{get_champion_name(id: participant[:championId])}.png "
-          %td.border #{ match_history[:matchType] }
-          %td.border.image
-            =image_tag "http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/#{participant[:stats][:item0]}.png"
-            =image_tag "http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/#{participant[:stats][:item1]}.png"
-            =image_tag "http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/#{participant[:stats][:item2]}.png"
-            =image_tag "http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/#{participant[:stats][:item3]}.png"
-            =image_tag "http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/#{participant[:stats][:item4]}.png"
-            =image_tag "http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/#{participant[:stats][:item5]}.png"
-            =image_tag "http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/#{participant[:stats][:item6]}.png"
-          %td.border #{participant[:stats][:kills]} / #{participant[:stats][:deaths]} / #{participant[:stats][:assists] }
-          %td.border
-            %div Gold: #{ participant[:stats][:goldEarned] }
-            %div Minion Kills: #{ participant[:stats][:minionsKilled] + participant[:stats][:neutralMinionsKilled] }
-          %td.border
-            Game Length: #{match_history[:matchDuration]}
-
+/%div Summoner ID: #{ @user.id }
+.panel
+  %br
+  %div
+    %table.center
+      %td
+        %h4= game_type(match_history[:matchType])
+      %td
+        %div
+          %b Game Length
+        %div= time(match_history[:matchDuration])
+    %body
+      - match_history[:participants].each do |participant|
+        - if participant[:teamId] == 100
+          %table#team1.team_border.center
+            %tbody
+              %tr
+                %td.champion_icon
+                  /%h5 #{get_champion_name(id: participant[:championId])}
+                  =image_tag champ_icon_url + "#{get_champion_name(id: participant[:championId])}.png", size: '50x50'
+                  /%h6 Level: #{ participant[:stats][:champLevel] }
+                %td.items
+                  - participant[:stats].select{ |k, _| /^item/ === k }.each do |_, item_id|
+                    - if (item_img_url + "#{item_id}.png") == (item_img_url + '0.png')
+                      =image_tag 'http://www.probuilds.net/resources/img/items/28/EmptyIcon.png', size: '30x30'
+                    - else
+                      =image_tag (item_img_url + "#{item_id}.png"), size: '30x30'
+                %td
+                  %div#kills #{participant[:stats][:kills]} Kills
+                  %div#deaths #{participant[:stats][:deaths]} Deaths
+                  %div#assists #{participant[:stats][:assists]} Assists
+                %td
+                  %div#gold
+                    %h5 Gold: #{ gold(participant[:stats][:goldEarned]) }
+                  %div#minion_kills Minion Kills: #{ participant[:stats][:minionsKilled] + participant[:stats][:neutralMinionsKilled] }
+                  %br
+        - else
+          %table#team2.team_border.center
+            %tbody
+              %tr
+                %td.champion_icon
+                  /%h5 #{get_champion_name(id: participant[:championId])}
+                  =image_tag champ_icon_url + "#{get_champion_name(id: participant[:championId])}.png", size: '50x50'
+                /%h6 Level: #{ participant[:stats][:champLevel] }
+                %td.items
+                  - participant[:stats].select{ |k, _| /^item/ === k }.each do |_, item_id|
+                    - if (item_img_url + "#{item_id}.png") == (item_img_url + '0.png')
+                      =image_tag 'http://www.probuilds.net/resources/img/items/28/EmptyIcon.png', size: '30x30'
+                    - else
+                      =image_tag (item_img_url + "#{item_id}.png"), size: '30x30'
+                %td
+                  %div#kills #{participant[:stats][:kills]} Kills
+                  %div#deaths #{participant[:stats][:deaths]} Deaths
+                  %div#assists #{participant[:stats][:assists]} Assists
+                %td
+                  %div#gold
+                    %h5 Gold: #{ gold(participant[:stats][:goldEarned]) }
+                  %div#minion_kills Minion Kills: #{ participant[:stats][:minionsKilled] + participant[:stats][:neutralMinionsKilled] }
+                  %br

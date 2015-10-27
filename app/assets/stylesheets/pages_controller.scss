@@ -20,7 +20,6 @@
 
 body {
   padding-top: 55px;
-  background-image: url("blitz.png");
 }
 
 .center {
@@ -39,27 +38,17 @@ h1.style {
   display: inline-block;
 }
 
-table {
-  background-color: white;
-  border-collapse: collapse;
-  table-layout:fixed;
+.center {
+  margin: 0 auto;
 }
 
-table.center {
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 10px;
+.header_bold {
+  color:white;
+  font-weight: bold;
 }
 
 
 
-td {
-  width: 500px;
-}
-
-td, th {
-  border: 1px solid black;
-}
 
 
 

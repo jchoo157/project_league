@@ -1,5 +1,7 @@
-%h1.style Welcome to the Match Show page!
-.container
+= provide(:title, 'Match History page')
+%div#title
+  %h1= 'Match History for ' + @user.username.capitalize
+  .center
+    = render partial: 'match_history', collection: @user.match_history
 
-  = render partial: 'match_history', collection: @user.match_history
 

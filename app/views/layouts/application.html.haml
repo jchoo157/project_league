@@ -16,8 +16,11 @@
 %body
   .container
     = render 'layouts/header'
-  .center
-    = yield
+    .center
+      %br
+      - flash.each do |name, msg|
+        = content_tag :div, msg, class: 'alert'
+      = yield
   .container
     = render 'layouts/footer'
 

@@ -1,3 +1,30 @@
 // Place all the styles related to the Matches controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+td {
+  width: 150px;
+  align-content: center;
+}
+
+.champion_icon {
+
+}
+
+#team2 {
+  background-color: lightgray;
+}
+
+#team1 {
+  background-color: floralwhite;
+}
+
+.team_border {
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+
