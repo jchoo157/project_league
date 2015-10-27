@@ -1,2 +1,2 @@
 API_FILE = ENV['API_KEY']
-API_KEY = API_FILE['api_key']
+API_KEY = API_FILE
