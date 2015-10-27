@@ -1,7 +1,6 @@
 require 'rails_helper'
 require 'webmock/rspec'
 
-
 describe MatchHistoryApi do
   before(:each) do
     @match_history_api = MatchHistoryApi.new

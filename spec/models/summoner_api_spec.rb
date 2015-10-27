@@ -1,7 +1,6 @@
 require 'rails_helper'
 require 'webmock/rspec'
 
-
 describe SummonerApi do
   before(:each) do
     @summoner_api = SummonerApi.new

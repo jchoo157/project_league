@@ -1,7 +1,6 @@
 require 'rails_helper'
 require 'webmock/rspec'
 
-
 describe ChampionApi do
   before(:each) do
     @champion_api = ChampionApi.new
