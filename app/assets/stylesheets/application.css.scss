@@ -17,7 +17,11 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
-.fancy {
-  color: lightyellow;
-  background-color: peachpuff;
+.order {
+  margin-left: 15px;
+  overflow: hidden;
+}
+
+.brightness img:hover {
+  opacity: .5;
 }
