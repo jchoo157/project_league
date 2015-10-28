@@ -15,7 +15,7 @@ class User
     data.map { |match| match[:matchId] }
   end
 
-  def get_match_histories(api:, count: 3)
+  def get_match_histories(api:, count: 5)
     ids = get_all_match_ids(api: MatchListApi.new)
     data = []
     ids[0...count].each { |id| data << parse(api.get_match_history(for_id: id)) }

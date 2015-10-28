@@ -4,13 +4,11 @@
     - if account_signed_in?
       %ul.nav.navbar-nav.navbar-right
         %li= link_to 'Home', home_path
-        %li= link_to 'About', about_path
-        %li= link_to 'Help', help_path
+        -#%li = link_to ''
         %li.header_bold= link_to 'Sign out', destroy_account_session_path, method: :delete
     -else
       %ul.nav.navbar-nav.navbar-right
         %li= link_to 'Home', home_path
-        %li= link_to 'About', about_path
-        %li= link_to 'Help', help_path
+        %li= link_to 'Champions', champions_path
         %li.header_bold= link_to 'Sign up', new_account_registration_path
         %li.header_bold= link_to 'Log in', account_session_path

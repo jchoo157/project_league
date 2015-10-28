@@ -7,4 +7,8 @@ class StaticPagesController < ApplicationController
 
   def help
   end
+
+  def champions
+
+  end
 end

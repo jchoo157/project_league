@@ -1,0 +1,7 @@
+= provide(:title, 'Champions')
+%h1 Champions
+%hr
+  %div
+    %table
+      - each_champion[:data].each do |key, value|
+        = image_tag(champ_icon_url + value[:key] + '.png', size: '60x60')
