@@ -1,0 +1,18 @@
+= provide(:title, 'Champion Info')
+%div
+  %body
+    %h2#champion_name= params[:champion] + ' ' + get_champion_data[:title]
+    %h4#champion_summary= get_champion_data[:blurb]
+    %table.center
+      %tr#champion_picture
+        %td= image_tag(champ_picture_url + params[:champion] + '_0' + '.jpg', size: '250x400')
+      %tr#champion_stats
+        %td
+          %b
+            %br
+            %div= 'Attack: ' + get_champion_data[:info][:attack].to_s
+            %div= 'Defense: ' + get_champion_data[:info][:defense].to_s
+            %div= 'Magic: ' + get_champion_data[:info][:magic].to_s
+            %div= 'Difficulty: ' + get_champion_data[:info][:difficulty].to_s
+
+

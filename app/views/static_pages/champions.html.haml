@@ -1,7 +1,8 @@
 = provide(:title, 'Champions')
 %h1 Champions
 %hr
-  %div
+  %div.order
     %table
-      - each_champion[:data].each do |key, value|
-        = image_tag(champ_icon_url + value[:key] + '.png', size: '60x60')
+      - list_of_champions[:data].each do |key, value|
+        %body.brightness= link_to image_tag(champ_icon_url + value[:key] + '.png', size: '60x60'),
+                            champion_info_path(:action => :show_champion, :champion => value[:key])

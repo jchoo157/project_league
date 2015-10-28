@@ -9,6 +9,8 @@ class StaticPagesController < ApplicationController
   end
 
   def champions
+  end
 
+  def champion_info
   end
 end
