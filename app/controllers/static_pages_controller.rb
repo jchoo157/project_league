@@ -5,6 +5,10 @@ class StaticPagesController < ApplicationController
   def about
   end
 
+  def matches
+    @user = User.new(username: user_params[:name])
+  end
+
   def help
   end
 
@@ -12,5 +16,11 @@ class StaticPagesController < ApplicationController
   end
 
   def champion_info
+  end
+
+  private
+
+  def user_params
+    params.require(:summoner).permit(:name)
   end
 end
