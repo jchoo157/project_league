@@ -1,18 +1,19 @@
-<<<<<<< HEAD
-.container
-  .jumbotron
+.jumbotron
+  .container
     %h1 Welcome To Project League!
 
     %p
-      Look up recent gaming history for any League of Legends player in North America!
+      Website is still under construction, but you're
+      more than welcome to check out our latest page.
 
-    = render 'matches/form'
+    = render 'form'
+
     -#= link_to 'Click Here', new_match_path, class: 'btn btn-primary', id: 'match-button', remote: true
-    #user-form{ style: 'display:none;' }
+
+    -##user-form{ style: 'display:none;' }
     %hr
-    %h4 Recent Pro Games!
-    %h5= link_to 'Dyrus', 'https://rocky-stream-2452.herokuapp.com/match?utf8=%E2%9C%93&summoner%5Bname%5D=dyrus&commit=Match+History'
-    %h5= link_to 'Pobelter', 'https://rocky-stream-2452.herokuapp.com/match?utf8=%E2%9C%93&summoner%5Bname%5D=pobelter&commit=Match+History'
-    %h5= link_to 'Doublelift', 'https://rocky-stream-2452.herokuapp.com/match?utf8=%E2%9C%93&summoner%5Bname%5D=doublelift&commit=Match+History'
-=======
->>>>>>> b3143bca1796f4adabf860716f1e29baf44d6b14
+    %p
+      Recent Pro Games!
+    = link_to 'Dyrus', 'https://rocky-stream-2452.herokuapp.com/match?utf8=%E2%9C%93&summoner%5Bname%5D=dyrus&commit=Match+History'
+    -#%h5= link_to 'Pobelter', 'https://rocky-stream-2452.herokuapp.com/match?utf8=%E2%9C%93&summoner%5Bname%5D=pobelter&commit=Match+History'
+    -#%h5= link_to 'Doublelift', 'https://rocky-stream-2452.herokuapp.com/match?utf8=%E2%9C%93&summoner%5Bname%5D=doubleli  ft&commit=Match+History'
