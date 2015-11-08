@@ -1,0 +1,5 @@
+= form_for :summoner, method: 'get', url: match_histories_path, html: { class: 'form-inline' } do |f|
+  .form-group
+    = f.label 'username', class: 'control-label'
+    = f.text_field :username, class: 'form-control', placeholder: 'Enter Summoner Name', required: 'required'
+  = f.submit 'Match History', class: 'btn btn-primary'
