@@ -1,0 +1,23 @@
+- team.each do |participant|
+  = content_tag :table, id: "team#{team_counter + 1}", class: %w(team_border center) do
+    %tbody
+      %tr
+        %td
+          %h5 #{get_champion_name(id: participant[:championId])}
+          g%h6 Level: #{ participant[:stats][:champLevel] }
+        %td.champion_icon
+          =image_tag champ_icon_url + "#{get_champion_name(id: participant[:championId])}.png", size: '50x50'
+        %td.items
+          - participant[:stats].select{ |k, _| /^item/ === k }.each do |_, item_id|
+            - if (item_img_url + "#{item_id}.png") == (item_img_url + '0.png')
+              =image_tag 'http://www.probuilds.net/resources/img/items/28/EmptyIcon.png', size: '30x30'
+            - else
+              =image_tag (item_img_url + "#{item_id}.png"), size: '30x30'
+        %td
+          %div#kills #{participant[:stats][:kills]} Kills
+          %div#deaths #{participant[:stats][:deaths]} Deaths
+          %div#assists #{participant[:stats][:assists]} Assists
+        %td
+          %div#gold
+            %h5 Gold: #{ gold(participant[:stats][:goldEarned]) }
+          %div#minion_kills Minion Kills: #{ participant[:stats][:minionsKilled] + participant[:stats][:neutralMinionsKilled] }
