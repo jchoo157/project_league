@@ -4,11 +4,6 @@ class MatchHistoriesController < ApplicationController
   def new
   end
 
-  # def create
-  #   @user = User.new(user_params)
-  #   redirect_to match_histories_url(@user)
-  # end
-
   def show
     @user = User.new(user_params)
   end

@@ -1,5 +1,4 @@
 module MatchesHelper
-
   attr_reader :level
 
   def get_champion_name(id:)
@@ -65,6 +64,12 @@ module MatchesHelper
       'Win'
     else
       'Loss'
+    end
+  end
+
+  def teams(participants)
+    participants.partition do |participant|
+      participant[:team] == 100
     end
   end
 end
