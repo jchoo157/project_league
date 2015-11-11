@@ -1,14 +1,15 @@
 %nav.navbar.navbar-inverse.navbar-fixed-top
   .container
     = link_to 'Project League', root_path, class: 'navbar-brand'
+    = link_to 'Home', home_path
+    = link_to 'Champions', champions_path
     - if account_signed_in?
       %ul.nav.navbar-nav.navbar-right
-        %li= link_to 'Home', home_path
-        -#%li = link_to ''
-        %li.header_bold= link_to 'Sign out', destroy_account_session_path, method: :delete
+        %li.header_bold
+          = link_to 'Sign out', destroy_account_session_path, method: :delete
     -else
       %ul.nav.navbar-nav.navbar-right
-        %li= link_to 'Home', home_path
-        %li= link_to 'Champions', champions_path
-        %li.header_bold= link_to 'Sign up', new_account_registration_path
-        %li.header_bold= link_to 'Log in', account_session_path
+        %li.header_bold
+          = link_to 'Sign up', new_account_registration_path
+        %li.header_bold
+          = link_to 'Log in', account_session_path
