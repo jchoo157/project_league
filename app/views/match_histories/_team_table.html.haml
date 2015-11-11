@@ -4,7 +4,7 @@
       %tr
         %td
           %h5 #{get_champion_name(id: participant[:championId])}
-          g%h6 Level: #{ participant[:stats][:champLevel] }
+          %h6 Level: #{ participant[:stats][:champLevel] }
         %td.champion_icon
           =image_tag champ_icon_url + "#{get_champion_name(id: participant[:championId])}.png", size: '50x50'
         %td.items
