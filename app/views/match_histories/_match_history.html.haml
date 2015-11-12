@@ -1,13 +1,13 @@
-/%div Summoner ID: #{ @user.id }
 .panel
   %br
   %div
     %table.center
       %td
-        %h4= game_type(match_history[:matchType])
+        %h4
+          = game_type(match_history[:queue])
       %td
         %div
           %b Game Length
-        %div= time(match_history[:matchDuration])
+        %div= Time.at(match_history[:matchDuration]).utc.strftime('%M:%S')
     %body
-      = render partial: 'team_table', collection: teams(match_history[:participants]), as: :team
+      = render partial: 'team', collection: teams(match_history[:participants])

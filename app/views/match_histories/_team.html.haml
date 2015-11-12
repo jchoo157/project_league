@@ -19,5 +19,5 @@
           %div#assists #{participant[:stats][:assists]} Assists
         %td
           %div#gold
-            %h5 Gold: #{ gold(participant[:stats][:goldEarned]) }
+            %h5 Gold: #{ (participant[:stats][:goldEarned]/1000.0).round(1) }k
           %div#minion_kills Minion Kills: #{ participant[:stats][:minionsKilled] + participant[:stats][:neutralMinionsKilled] }

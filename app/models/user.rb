@@ -12,7 +12,7 @@ class User
   end
 
   def match_history
-    match_info.get_match_history
+    @match_history ||= match_info.get_match_history
   end
 
   private
