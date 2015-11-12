@@ -29,7 +29,7 @@ module MatchesHelper
 
   def teams(participants)
     participants.partition do |participant|
-      participant[:team] == 100
+      participant[:teamId] == 100
     end
   end
 end
