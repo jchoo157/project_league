@@ -1,5 +1,5 @@
 class MatchInfo
-  attr_reader :match_list_api, :match_history_api, :summoner_id
+  attr_reader :match_list_api, :match_history_api, :summoner_id, :match_history
 
   def initialize(properties)
     @summoner_id = properties[:summoner_id]
@@ -16,7 +16,7 @@ class MatchInfo
   end
 
   def get_match_history(count = 5)
-    matches[0...count].map do |match|
+    @match_history ||= matches[0...count].map do |match|
       match.merge(match_details(match[:matchId]))
     end
   end

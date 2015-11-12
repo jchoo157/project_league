@@ -14,14 +14,14 @@
   %script{ src: 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js' }
 
 %body
+  - flash.each do |_, msg|
+    = content_tag :div, msg, class: 'alert'
+
+  = render 'layouts/header'
+
   .container
-    = render 'layouts/header'
-    .center
-      %br
-      - flash.each do |name, msg|
-        = content_tag :div, msg, class: 'alert'
-      = yield
-  .container
-    = render 'layouts/footer'
+    = yield
+
+  = render 'layouts/footer'
 
 

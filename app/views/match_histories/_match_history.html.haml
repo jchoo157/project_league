@@ -1,13 +1,10 @@
-.panel
-  %br
-  %div
+.panel.panel-default
+  .panel-heading
+    %h4.panel-title
+      = game_type(match_history[:queue])
+      Game Length
+      = Time.at(match_history[:matchDuration]).utc.strftime('%M:%S')
+  .panel-body
     %table.center
-      %td
-        %h4
-          = game_type(match_history[:queue])
-      %td
-        %div
-          %b Game Length
-        %div= Time.at(match_history[:matchDuration]).utc.strftime('%M:%S')
-    %body
-      = render partial: 'team', collection: teams(match_history[:participants])
+      %tbody
+        = render partial: 'team', collection: teams(match_history[:participants])
